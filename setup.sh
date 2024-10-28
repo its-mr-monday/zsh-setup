@@ -32,11 +32,20 @@ edit_theme() {
     sed -i 's/^ZSH_THEME="robyrussell"$/ZSH_THEME="powerlevel10k\/powerlevel10k"/' ~/.zshrc
 }
 
+edit_history_size() {
+    sed -i '/^HISTFILESIZE=/d' ~/.zshrc
+    sed -i '/^HISTSIZE=/d' ~/.zshrc
+    echo 'export HISTFILESIZE=9999999999' >> ~/.zshrc
+    echo 'export HISTSIZE=9999999999' >> ~/.zshrc
+    
+}
+
 main() {
     download_oh_my_zsh
     download_plugins
     edit_plugins
     edit_theme
+    edit_history_size
 }
 
 main
