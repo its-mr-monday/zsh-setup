@@ -29,7 +29,7 @@ edit_plugins() {
 edit_theme() {
     #Find the entire line for ZSH_THEME="robbyrussell"
     #Replace it with ZSH_THEME="powerlevel10k/powerlevel10k"
-    sed -i 's/^ZSH_THEME="robyrussell"$/ZSH_THEME="powerlevel10k\/powerlevel10k"/' ~/.zshrc
+    sed -i 's/^robyrussell$/"powerlevel10k\/powerlevel10k/' ~/.zshrc
 }
 
 edit_history_size() {
